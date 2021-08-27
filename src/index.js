@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-plusplus */
-import './assets/stylesheet/style.css';
 
 const container = document.querySelector('.container');
 
