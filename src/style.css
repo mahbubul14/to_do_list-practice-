@@ -1,22 +1,4 @@
-body {
-  background-color: silver;
-}
-
-#input {
-  padding: 12px;
-  padding-right: 3rem;
-}
-
-#addBtn {
-  padding: 12px;
-  padding-left: 1rem;
-}
-
-.container {
-  text-align: center;
-}
-
-#list {
-  text-align: center;
-  list-style: inside;
+.link {
+    text-decoration: none;
+    color: black;
 }
