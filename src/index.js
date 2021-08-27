@@ -1,59 +1,39 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-plusplus */
+import './style.css';
 
-const container = document.querySelector('.container');
+const allTasks = document.getElementById('all-tasks');
 
-const tasksList = [
+const taskList = [
   {
-    description: 'Do this',
-    completed: true,
-    index: 0,
+    description: 'Get up at 8 am',
+    completed: false,
+    id: 0,
   },
   {
-    description: 'Do that',
+    description: 'Start working at 9 am',
     completed: false,
-    index: 1,
+    id: 1,
+  },
+  {
+    description: 'Drink coffe at 9:30',
+    completed: false,
+    id: 2,
   },
 ];
 
-const renderTasks = (tasks) => {
-  for (let i = 0; i <= tasks.length - 1; i++) {
-    const taskContainer = document.createElement('div');
-    taskContainer.id = tasks[i].index;
-    taskContainer.classList.add('list');
-
-    const taskCheckox = document.createElement('input');
-    taskCheckox.type = 'checkbox';
-    taskCheckox.classList.add('check');
-
-    const taskDescription = document.createElement('label');
-    taskDescription.classList.add('label');
-    taskDescription.textContent = `${tasks[i].description}`;
-    taskDescription.contentEditable = true;
-
-    const dots = document.createElement('span');
-    dots.innerHTML = "<i class='fas fa-ellipsis-v'></i>";
-
-    const trash = document.createElement('span');
-    trash.innerHTML = "<i class='fas fa-trash-alt'></i>";
-    trash.style.display = 'none';
-
-    taskContainer.appendChild(taskCheckox);
-    taskContainer.appendChild(taskDescription);
-    taskContainer.appendChild(dots);
-    taskContainer.appendChild(trash);
-    container.appendChild(taskContainer);
-
-    taskDescription.addEventListener('focus', () => {
-      dots.style.display = 'none';
-      trash.style.display = 'flex';
-    });
-
-    taskDescription.addEventListener('blur', () => {
-      dots.style.display = 'flex';
-      trash.style.display = 'none';
-    });
+const displayTasks = () => {
+  allTasks.innerHTML = '';
+  for (let i = 0; i < taskList.length; i += 1) {
+    const each = taskList[i];
+    const list = `<div class="eachTask">
+      <div class="group-list">
+      <input type="checkbox" class="box" id="list-box" name="list-box">
+        <p class="task-name">${each.description}</p>
+      </div> 
+      <button class="menu-icon" id="${each.id}"><i class="fas fa-ellipsis-v"></i></button>
+    </div>
+    <hr>`;
+    allTasks.innerHTML += list;
   }
 };
 
-renderTasks(tasksList);
+window.onload = displayTasks();
