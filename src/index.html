@@ -7,23 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 
 <body>
-        <section class="container">
-            <div class="heading-box">
+    <section class="container">
+        <div class ="">
+            <div class="d-flex justify-content-between mt-4">
                 <h3 class="container-heading">Today's To Do</h3>
-                <i class="fas fa-sync-alt"></i>
+                <i class="fas fa-sync-alt text-secondary"></i>
             </div>
-            <div class="input-box">
-                <form class="input-form" id="form">
-                    <input type="text" class="input-task" id="task" placeholder="Add to your List...">
-                    <button type="submit" class="submit-task" id="enter-task"><i class="fas fa-reply"></i></button>
-                </form>
+            <hr>
+            <div class="d-flex justify-content-between" id="form">
+                <input type="text" class="border border-white" id="task" placeholder="Add to your List...">
+                <a href="#"><i class="fas fa-reply p-1 text-secondary"></i></a>
             </div>
-            <div class="list" id="all-tasks"></div>
-            <button class="btn-completed" type="button" id="all-completed">Clear all completed</button>
-        </section>
+            <hr>
+            <div id="list"></div>
+        </div>
+            <a href="#" class = "clearBtn text-secondary border border-white justify-content-center" id="completeBtn">Clear all completed</a>
+    </section>
     <script defer src="../dist/bundle.js"></script>
 </body>
 
