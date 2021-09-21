@@ -1,6 +1,7 @@
-.clearBtn {
-    text-decoration: none;
-    margin-left: 40%;
-    padding: 15px;
-    font-size: x-large;
+.hello {
+    color: red;
+  }
+
+body {
+    background-color: bisque;
 }
